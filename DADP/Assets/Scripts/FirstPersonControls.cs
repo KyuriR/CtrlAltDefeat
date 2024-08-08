@@ -20,6 +20,18 @@ public class FirstPersonControls : MonoBehaviour
     private CharacterController characterController; // Reference to the CharacterController component
 
 
+    [Header("SHOOTING SETTINGS")]
+    [Space(5)]
+    public GameObject projectilePrefab; // Projectile prefab for shooting
+    public Transform firePoint; // Point from which the projectile is fired
+    public float projectileSpeed = 20f; // Speed at which the projectile is fired
+    public float pickUpRange = 3f; // Range within which objects can be picked up
+    private bool holdingGun = false;
+    [Header("PICKING UP SETTINGS")]
+    [Space(5)]
+    public Transform holdPosition; // Position where the picked-up object will be held
+    private GameObject heldObject; // Reference to the currently held object
+    
     private void Awake()
     {
         // Get and store the CharacterController component attached to this GameObject
@@ -27,22 +39,25 @@ public class FirstPersonControls : MonoBehaviour
     }
 
     private void OnEnable()
-    { // Create a new instance of the input actions
+    { 
+        // Create a new instance of the input actions
         var playerInput = new Controls();
-
         // Enable the input actions
         playerInput.Player.Enable();
-
         // Subscribe to the movement input events
-        playerInput.Player.Movement.performed += ctx => moveInput = ctx.ReadValue<Vector2>(); // Update moveInput when movement input is performed
-        playerInput.Player.Movement.canceled += ctx => moveInput = Vector2.zero; // Reset moveInput when movement input is canceled
-
+        playerInput.Player.Movement.performed += ctx => moveInput =
+            ctx.ReadValue<Vector2>(); // Update moveInput when movement input is performed
+        playerInput.Player.Movement.canceled += ctx => moveInput =
+            Vector2.zero; // Reset moveInput when movement input is canceled
         // Subscribe to the look input events
-        playerInput.Player.Look.performed += ctx => lookInput = ctx.ReadValue<Vector2>(); // Update lookInput when look input is performed
-        playerInput.Player.Look.canceled += ctx => lookInput = Vector2.zero; // Reset lookInput when look input is canceled
-
+        playerInput.Player.Look.performed += ctx => lookInput =
+            ctx.ReadValue<Vector2>(); // Update lookInput when look input is performed
+        playerInput.Player.Look.canceled += ctx => lookInput =
+            Vector2.zero; // Reset lookInput when look input is canceled
         // Subscribe to the jump input event
         playerInput.Player.Jump.performed += ctx => Jump(); // Call the Jump method when jump input is performed
+        // Subscribe to the shoot input event
+            playerInput.Player.Shoot.performed += ctx => Shoot(); // Call the Shoot method when shoot input is performed
     }
 
     private void Update()
@@ -101,4 +116,17 @@ public class FirstPersonControls : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
     }
+
+    public void Shoot()
+    {
+// Instantiate the projectile at the fire point
+        GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+// Get the Rigidbody component of the projectile and set its velocity
+        Rigidbody rb = projectile.GetComponent<Rigidbody>();
+        rb.velocity = firePoint.forward * projectileSpeed;
+// Destroy the projectile after 3 seconds
+        Destroy(projectile, 3f);
+
+    }
+
 }
