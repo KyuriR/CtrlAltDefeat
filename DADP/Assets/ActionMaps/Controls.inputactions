@@ -31,6 +31,36 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+<<<<<<< Updated upstream
+=======
+                },
+                {
+                    "name": "Shoot",
+                    "type": "Button",
+                    "id": "5be0e976-9435-4d46-8162-49c6825fab00",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Tap",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PickUp",
+                    "type": "Button",
+                    "id": "c00dc4d4-152e-4662-889b-438ea68406e6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Crouch",
+                    "type": "Button",
+                    "id": "0d0fdd3a-a42c-4e57-bf1e-46e80eb4e940",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+>>>>>>> Stashed changes
                 }
             ],
             "bindings": [
@@ -198,6 +228,75 @@
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
+<<<<<<< Updated upstream
+=======
+                },
+                {
+                    "name": "",
+                    "id": "d7fd3bf5-31cd-4625-afd7-fcc7c166d2f3",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "45af1d3c-638f-4792-b8b0-d6c9b5a0b52d",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bb9f30d1-cc39-4f9d-b85f-1a4b8fa90d16",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "PickUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "52e55f99-ac21-44e2-8773-2173198b68a0",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "PickUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8cd14b6b-d9bb-4e53-805a-90dbf3e6239f",
+                    "path": "<Keyboard>/leftCtrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Crouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e8cec485-e11e-4bca-8526-e2d432e70e23",
+                    "path": "<Gamepad>/rightStickPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Crouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+>>>>>>> Stashed changes
                 }
             ]
         }

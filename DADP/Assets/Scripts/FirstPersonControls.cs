@@ -1,6 +1,10 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Windows;
+using Input = UnityEngine.Input;
+
 public class FirstPersonControls : MonoBehaviour
 {
    
@@ -20,10 +24,39 @@ public class FirstPersonControls : MonoBehaviour
     private CharacterController characterController; // Reference to the CharacterController component
 
 
+<<<<<<< Updated upstream
+=======
+    [Header("SHOOTING SETTINGS")]
+    [Space(5)]
+    public GameObject projectilePrefab; // Projectile prefab for shooting
+    public Transform firePoint; // Point from which the projectile is fired
+    public float projectileSpeed = 20f; // Speed at which the projectile is fired
+    public float pickUpRange = 3f; // Range within which objects can be picked up
+    private bool holdingGun = false;
+    [Header("PICKING UP SETTINGS")]
+    [Space(5)]
+    public Transform holdPosition; // Position where the picked-up object will be held
+    private GameObject heldObject; // Reference to the currently held object
+    [Header("CROUCH")]
+    [Space(height:5)]
+    public float crouchHeight = 1f;
+    public float standingHeight = 2f;
+    public float crouchSpeed = 1.5f;
+    private bool isCrouching = false;
+    [Header("Flashlight")] 
+    public GameObject Flashlight;
+    private bool flashlightActive = false;
+    
+>>>>>>> Stashed changes
     private void Awake()
     {
         // Get and store the CharacterController component attached to this GameObject
         characterController = GetComponent<CharacterController>();
+    }
+
+    private void Start()
+    {
+        Flashlight.gameObject.SetActive(false);
     }
 
     private void OnEnable()
@@ -43,6 +76,15 @@ public class FirstPersonControls : MonoBehaviour
 
         // Subscribe to the jump input event
         playerInput.Player.Jump.performed += ctx => Jump(); // Call the Jump method when jump input is performed
+<<<<<<< Updated upstream
+=======
+        // Subscribe to the shoot input event
+            playerInput.Player.Shoot.performed += ctx => Shoot(); // Call the Shoot method when shoot input is performed
+        // Subscribe to the pick-up input event
+            playerInput.Player.PickUp.performed += ctx => PickUpObject(); //Call the PickUpObject method when pick-up input is performed
+        // Subscribe to the crouch input event
+            //playerInput.Player.Crouch.performed += ctx => Crouch(); //Call the Crouch method when crouch input is performed
+>>>>>>> Stashed changes
     }
 
     private void Update()
@@ -51,6 +93,7 @@ public class FirstPersonControls : MonoBehaviour
         Move();
         LookAround();
         ApplyGravity();
+        ToggleFlashlight();
     }
 
     public void Move()
@@ -61,8 +104,18 @@ public class FirstPersonControls : MonoBehaviour
         // Transform direction from local to world space
         move = transform.TransformDirection(move);
 
+        float currentSpeed;
+        if (isCrouching)
+        {
+            currentSpeed = crouchSpeed;
+        }
+        else
+        {
+            currentSpeed = moveSpeed;
+        }
+
         // Move the character controller based on the movement vector and speed
-        characterController.Move(move * moveSpeed * Time.deltaTime);
+        characterController.Move(move * currentSpeed * Time.deltaTime);
     }
 
     public void LookAround()
@@ -101,4 +154,84 @@ public class FirstPersonControls : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
     }
+<<<<<<< Updated upstream
+=======
+
+    
+    public void Shoot()
+    {
+        if (holdingGun == true)
+        {
+// Instantiate the projectile at the fire point
+            GameObject projectile = Instantiate(projectilePrefab,
+                firePoint.position, firePoint.rotation);
+// Get the Rigidbody component of the projectile and set its velocity
+            Rigidbody rb = projectile.GetComponent<Rigidbody>();
+            rb.velocity = firePoint.forward * projectileSpeed;
+// Destroy the projectile after 3 seconds
+            Destroy(projectile, 3f);
+        }
+    }
+    
+    public void PickUpObject()
+    {
+// Check if we are already holding an object
+        if (heldObject != null)
+        {
+            heldObject.GetComponent<Rigidbody>().isKinematic = false; //Enable physics
+            heldObject.transform.parent = null;
+            holdingGun = false;
+        }
+// Perform a raycast from the camera's position forward
+        Ray ray = new Ray(playerCamera.position, playerCamera.forward);
+        RaycastHit hit;
+// Debugging: Draw the ray in the Scene view
+        Debug.DrawRay(playerCamera.position, playerCamera.forward * pickUpRange, Color.red, 2f);
+        if (Physics.Raycast(ray, out hit, pickUpRange))
+        {
+// Check if the hit object has the tag "PickUp"
+            if (hit.collider.CompareTag("PickUp"))
+            {
+// Pick up the object
+                heldObject = hit.collider.gameObject;
+                heldObject.GetComponent<Rigidbody>().isKinematic = true;
+// Disable physics
+// Attach the object to the hold position
+                heldObject.transform.position = holdPosition.position;
+                heldObject.transform.rotation = holdPosition.rotation;
+                heldObject.transform.parent = holdPosition;
+            }
+            else if (hit.collider.CompareTag("Gun"))
+            {
+// Pick up the object
+                heldObject = hit.collider.gameObject;
+                heldObject.GetComponent<Rigidbody>().isKinematic = true;
+// Disable physics
+// Attach the object to the hold position
+                heldObject.transform.position = holdPosition.position;
+                heldObject.transform.rotation = holdPosition.rotation;
+                heldObject.transform.parent = holdPosition;
+                holdingGun = true;
+            }
+        }
+    }
+
+    public void ToggleFlashlight()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            if (flashlightActive == false)
+            {
+                Flashlight.gameObject.SetActive(true);
+                flashlightActive = true;
+            }
+            else
+            {
+                Flashlight.gameObject.SetActive(false);
+                flashlightActive = false;
+            }
+        }
+    }
+
+>>>>>>> Stashed changes
 }
