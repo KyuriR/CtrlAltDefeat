@@ -506,6 +506,17 @@ MonoBehaviour:
   gravity: -9.81
   jumpHeight: 1
   playerCamera: {fileID: 330585546}
+<<<<<<< Updated upstream
+=======
+  sprintSpeedMultiplier: 2
+  sprintKey: 114
+  projectilePrefab: {fileID: 7094671623081622639, guid: 0259ec65023477a45a6c3300391310d9,
+    type: 3}
+  firePoint: {fileID: 1211214562}
+  projectileSpeed: 20
+  pickUpRange: 3
+  holdPosition: {fileID: 261717159}
+>>>>>>> Stashed changes
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
