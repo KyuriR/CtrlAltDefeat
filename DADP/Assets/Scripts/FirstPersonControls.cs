@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FirstPersonControls : MonoBehaviour
@@ -39,19 +40,30 @@ public class FirstPersonControls : MonoBehaviour
     [Space(5)]
     public float crouchHeight = 1f; //make short
     public float standingHeight = 2f; //make normal
-    public float crouchSpeed = 0.1f;//make slower
+    public float crouchSpeed = 1f;//make slower
     public bool isCrouching = false; //check if crouch
 
     //sprint settings 
     [Header("SPRINT SETTINGS")]
     [Space(5)]
-    public float sprintSpeed = 4f;//make slow
-    private bool isSprinting = false; //check if speeding
+    public float sprintSpeed = 4f;//make faster
+    private bool isSprinting = false; //check if sprinting
+
+    //flashlight settings 
+    [Header("FLASHLIGHT SETTINGS")]
+    [Space(5)]
+    public GameObject Flashlight;
+    private bool isFlashlightActive = false; //check if sprinting
 
     private void Awake()
     {
         // Get and store the CharacterController component attached to this GameObject
         characterController = GetComponent<CharacterController>();
+    }
+
+    public void Start()
+    {
+        Flashlight.gameObject.SetActive(false);
     }
 
     private void OnEnable()
@@ -84,6 +96,9 @@ public class FirstPersonControls : MonoBehaviour
 
         //
         playerInput.Player.Sprint.performed += ctx => Sprint(); //Call the ToggleCrouch method when crouch input is performed 
+        
+        //
+        playerInput.Player.ToggleFlashlight.performed += ctx => ToggleFlashlight(); //Call the ToggleCrouch method when crouch input is performed 
 
 
     }
@@ -108,7 +123,7 @@ public class FirstPersonControls : MonoBehaviour
 
         //Adjust speed if crouching 
         float currentSpeed;
-        if (isCrouching)
+        if (!isCrouching)
         {
             currentSpeed = crouchSpeed;
         }
@@ -120,7 +135,7 @@ public class FirstPersonControls : MonoBehaviour
         characterController.Move(move * currentSpeed * Time.deltaTime);
         //Apply sprintingmultiplier if sprinting
         float CurrentSpeed;
-        if (isSprinting)
+        if (!isSprinting)
         {
             CurrentSpeed = sprintSpeed;
         }
@@ -260,5 +275,21 @@ public class FirstPersonControls : MonoBehaviour
         {
             isSprinting = true;
         }
+    }
+
+    public void ToggleFlashlight()
+    {
+        if (isFlashlightActive)
+        {
+            isFlashlightActive = false;
+            Flashlight.gameObject.SetActive(false);
+        }
+        else
+        {
+            isFlashlightActive = true;
+            Flashlight.gameObject.SetActive(true);
+        }
+
+
     }
 }
