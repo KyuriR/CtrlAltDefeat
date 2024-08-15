@@ -39,14 +39,13 @@ public class FirstPersonControls : MonoBehaviour
     [Space(5)]
     public float crouchHeight = 1f; //make short
     public float standingHeight = 2f; //make normal
-    public float crouchSpeed = 1.5f;//make slow
+    public float crouchSpeed = 0.1f;//make slower
     public bool isCrouching = false; //check if crouch
 
     //sprint settings 
     [Header("SPRINT SETTINGS")]
     [Space(5)]
-    public float sprintSpeedMultiplier = 2.0f; //make faster
-    public KeyCode sprintKey = KeyCode.LeftShift; //Key aid making faster
+    public float sprintSpeed = 4f;//make slow
     private bool isSprinting = false; //check if speeding
 
     private void Awake()
@@ -83,6 +82,10 @@ public class FirstPersonControls : MonoBehaviour
         //
         playerInput.Player.Crouch.performed += ctx => ToggleCrouch(); //Call the ToggleCrouch method when crouch input is performed 
 
+        //
+        playerInput.Player.Sprint.performed += ctx => Sprint(); //Call the ToggleCrouch method when crouch input is performed 
+
+
     }
 
     private void Update()
@@ -95,8 +98,7 @@ public class FirstPersonControls : MonoBehaviour
 
     public void Move()
     {
-        //check if sprint key is pressed
-        isSprinting = UnityEngine.Input.GetKey(sprintKey);
+       
 
         // Create a movement vector based on the input
         Vector3 move = new Vector3(moveInput.x, 0, moveInput.y);
@@ -114,11 +116,21 @@ public class FirstPersonControls : MonoBehaviour
         {
             currentSpeed = moveSpeed;
         }
-
-        //Apply sprintingmultiplier if sprinting
-        float adjustSpeed = isSprinting ? moveSpeed * sprintSpeedMultiplier : moveSpeed;
         // Move the character controller based on the movement vector and speed
-        characterController.Move(move * adjustSpeed * Time.deltaTime);
+        characterController.Move(move * currentSpeed * Time.deltaTime);
+        //Apply sprintingmultiplier if sprinting
+        float CurrentSpeed;
+        if (isSprinting)
+        {
+            CurrentSpeed = sprintSpeed;
+        }
+        else
+        {
+            CurrentSpeed = moveSpeed;
+        }
+;
+        // Move the character controller based on the movement vector and speed
+        characterController.Move(move * CurrentSpeed * Time.deltaTime);
     }
 
     public void LookAround()
@@ -235,6 +247,18 @@ public class FirstPersonControls : MonoBehaviour
             //Crouch down
             characterController.height = crouchHeight;
             isCrouching = true;
+        }
+    }
+
+    public void Sprint()
+    {
+        if (isSprinting)
+        {
+            isSprinting = false;
+        }
+        else
+        {
+            isSprinting = true;
         }
     }
 }
