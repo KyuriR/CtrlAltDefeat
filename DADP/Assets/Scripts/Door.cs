@@ -9,7 +9,7 @@ public class Door: MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.O))
         {
             animator.SetTrigger("AnimateDoor");
             Debug.Log("open door");
