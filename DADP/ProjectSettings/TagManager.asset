@@ -7,6 +7,8 @@ TagManager:
   - Ground
   - Gun
   - PickUp
+  - Switch
+  - Door
   layers:
   - Default
   - TransparentFX
