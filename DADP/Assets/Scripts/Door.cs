@@ -11,8 +11,15 @@ public class Door: MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.O))
         {
-            animator.SetTrigger("AnimateDoor");
-            Debug.Log("open door");
+            if (isDoorOpen == false)
+            {
+                animator.SetTrigger("AnimateDoor"); //open the door
+                Debug.Log("open door");
+            }
+            else 
+            {
+                animator.SetTrigger("AnimateDoor"); //close the door
+            }
         }
     }
 

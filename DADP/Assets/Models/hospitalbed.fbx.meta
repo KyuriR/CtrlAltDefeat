@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: eedb49dc76619844fb2138289b74778a
+guid: 15b5b94354236f743a9a47a3c5818758
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,38 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Doors
-    second: {fileID: 2100000, guid: 19993971b726d07498347f6cfd83edc8, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Glass
-    second: {fileID: 2100000, guid: 45ee1438064328e4f9bc161be2987f07, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: 720f70ac2c960344191b707bc21f57bf, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Steel
-    second: {fileID: 2100000, guid: eed6b88b0a092fa4396e86c0ace0125e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Tiles
-    second: {fileID: 2100000, guid: d7b2c9d43aada1540bc359432a89f256, type: 2}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: LowPoly
-    second: {fileID: 2800000, guid: 488a2d9c1948ade4aa19e2dae57f01bc, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: "\u2014Pngtree\u2014tile design_3545186"
-    second: {fileID: 2800000, guid: 155bd8d5d64a03446bbc2259d4bafe62, type: 3}
+      name: Material.010
+    second: {fileID: 2100000, guid: bf6b7571240a2324db6f452533aaa7b4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
