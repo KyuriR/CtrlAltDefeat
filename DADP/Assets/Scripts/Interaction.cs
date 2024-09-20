@@ -18,7 +18,7 @@ public class Interaction : MonoBehaviour
             {
                 interactionText.SetActive(true);
 
-                if (Input.GetKeyDown(KeyCode.I))
+                if (Input.GetKeyDown(KeyCode.E))
                 {
                     hit.collider.gameObject.GetComponent<Letter>().openCloseLetter();
 
