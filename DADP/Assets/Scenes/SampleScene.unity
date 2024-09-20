@@ -179,7 +179,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '[I]'
+  m_text: '[E]'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6873,7 +6873,7 @@ GameObject:
   - component: {fileID: 788417213}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6963,7 +6963,7 @@ Transform:
   m_GameObject: {fileID: 788417207}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 15.521, y: -6.37, z: 3.64}
+  m_LocalPosition: {x: 15.63, y: -6.37, z: 4.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7593,8 +7593,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.05061866, y: 0.0229484, z: 0.103303246}
-  m_Center: {x: 0.3584303, y: 0.025515584, z: -0.13699444}
+  m_Size: {x: 0.05061866, y: 0.03, z: 0.103303246}
+  m_Center: {x: 0.3584303, y: 0.03, z: -0.13699444}
 --- !u!1 &1195780729
 GameObject:
   m_ObjectHideFlags: 0
@@ -8816,11 +8816,11 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.08114333, y: 0.0040470804, z: 0.14166857}
+  m_Size: {x: 0.08114333, y: 0.07, z: 0.14166857}
   m_Center: {x: -0.3701447, y: 0.15464179, z: -0.1188967}
 --- !u!23 &1894646236
 MeshRenderer:
@@ -9300,11 +9300,11 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.08114333, y: 0.0040470804, z: 0.14166857}
+  m_Size: {x: 0.08114333, y: 0.07, z: 0.14166857}
   m_Center: {x: -0.3701447, y: 0.15464179, z: -0.1188967}
 --- !u!23 &2130873295
 MeshRenderer:
