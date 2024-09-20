@@ -9,7 +9,6 @@ TagManager:
   - PickUp
   - Switch
   - Door
-  - Keycard
   layers:
   - Default
   - TransparentFX
