@@ -11,26 +11,26 @@ public class Door : MonoBehaviour
 
     void Update()
     {
-        if (isPlayerInRange && Input.GetKeyDown(KeyCode.E))
+        if (isPlayerInRange && Input.GetKeyDown(KeyCode.F))
         {
             if (isDoorOpen == false)
             {
-                OpenStairDoor();
+                OpenDoor();
             }
             else
             {
-                CloseStairDoor();
+                CloseDoor();
             }
         }
     }
 
-    void OpenStairDoor()
+    void OpenDoor()
     {
         animator.SetTrigger("AnimateDoor"); //open the door
         Debug.Log("open door");
     }
 
-    void CloseStairDoor()
+    void CloseDoor()
     {
         animator.SetTrigger("AnimateDoor"); //close the door
     }

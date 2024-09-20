@@ -10,7 +10,7 @@ public class DoorKick : MonoBehaviour
 
     void Update()
     {
-        if (isPlayerInRange && Input.GetKeyDown(KeyCode.E))
+        if (isPlayerInRange && Input.GetKeyDown(KeyCode.F))
         {
             KickDoor();
         }
