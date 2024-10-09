@@ -6,6 +6,9 @@ using UnityEngine;
 public class FirstPersonControls : MonoBehaviour
 {
 
+    public Controls controls;
+    public Controls.PlayerActions playerActions;
+    
     [Header("MOVEMENT SETTINGS")]
     [Space(5)]
     // Public variables to set movement and look speed, and the player camera
@@ -14,6 +17,7 @@ public class FirstPersonControls : MonoBehaviour
     public float gravity = -9.81f; // Gravity value
     public float jumpHeight = 1.0f; // Height of the jump
     public Transform playerCamera; // Reference to the player's camera
+    public Camera Cam;
                                    // Private variables to store input values and the character controller
     private Vector2 moveInput; // Stores the movement input from the player
     private Vector2 lookInput; // Stores the look input from the player
