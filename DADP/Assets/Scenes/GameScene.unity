@@ -7414,7 +7414,9 @@ MonoBehaviour:
   firePoint: {fileID: 0}
   projectileSpeed: 20
   holdPosition: {fileID: 261717159}
+  heldObject: {fileID: 0}
   pickUpRange: 3
+  holdingKey: 0
   crouchHeight: 1
   standingHeight: 2
   crouchSpeed: 1.5
@@ -15160,12 +15162,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.08122635, y: 0.0062058563, z: 0.16403775}
-  m_Center: {x: 0.10382278, y: 0.15353335, z: 0.03317411}
+  m_Size: {x: 0.08122635, y: 0.06, z: 0.16403775}
+  m_Center: {x: 0.10382278, y: 0.15, z: 0.03317411}
 --- !u!1 &1894646232
 GameObject:
   m_ObjectHideFlags: 0
@@ -16141,7 +16143,8 @@ GameObject:
   - component: {fileID: 2130873295}
   - component: {fileID: 2130873294}
   - component: {fileID: 2130873293}
-  m_Layer: 0
+  - component: {fileID: 2130873297}
+  m_Layer: 6
   m_Name: StairDoors2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16195,8 +16198,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.08114333, y: 0.07, z: 0.14166857}
-  m_Center: {x: -0.3701447, y: 0.15464179, z: -0.1188967}
+  m_Size: {x: 0.08114333, y: 0.1, z: 0.14166857}
+  m_Center: {x: -0.39, y: 0.15464179, z: -0.1188967}
 --- !u!23 &2130873295
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16247,6 +16250,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2130873291}
   m_Mesh: {fileID: -1016369323295675136, guid: eedb49dc76619844fb2138289b74778a, type: 3}
+--- !u!114 &2130873297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130873291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e956c1c32e403e4ba58ebf5543f3d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promptMessage: Open Door [F]
 --- !u!1 &2145559858
 GameObject:
   m_ObjectHideFlags: 0
@@ -17369,7 +17385,9 @@ GameObject:
   - component: {fileID: 4513318742495448200}
   - component: {fileID: 4163610048792609190}
   - component: {fileID: 1894503904}
-  m_Layer: 0
+  - component: {fileID: 4513318742495448201}
+  - component: {fileID: 4513318742495448202}
+  m_Layer: 6
   m_Name: SecurityDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17388,6 +17406,7 @@ GameObject:
   - component: {fileID: 5154276460261350575}
   - component: {fileID: 5984117543410686008}
   - component: {fileID: 2059828868}
+  - component: {fileID: 5984117543410686009}
   m_Layer: 0
   m_Name: StorageDoor
   m_TagString: Untagged
@@ -19638,7 +19657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e956c1c32e403e4ba58ebf5543f3d55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptMessage: Open Door
+  promptMessage: Open Door [F]
 --- !u!23 &3642803779776816704
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20441,7 +20460,8 @@ GameObject:
   - component: {fileID: 2171983748099457083}
   - component: {fileID: 1391754327}
   - component: {fileID: 8216541049822593459}
-  m_Layer: 0
+  - component: {fileID: 8216541049822593460}
+  m_Layer: 6
   m_Name: StairDoors1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20633,6 +20653,31 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 997777132857230855}
   m_Mesh: {fileID: -2559884614655686930, guid: eedb49dc76619844fb2138289b74778a, type: 3}
+--- !u!114 &4513318742495448201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997777132857230855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf57ab6aa058ad46a172962ecbf78fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4513318742495448202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997777132857230855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 900f7d15469d63346822e53b095631cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promptMessage: Locked
 --- !u!33 &4522171882942869079
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -21840,6 +21885,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5984117543410686009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000546847930600810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 900f7d15469d63346822e53b095631cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promptMessage: LOCKED
 --- !u!4 &5991772704805665974
 Transform:
   m_ObjectHideFlags: 0
@@ -24136,6 +24194,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1203284067}
+--- !u!114 &8216541049822593460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4344025659820293833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e956c1c32e403e4ba58ebf5543f3d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promptMessage: Open Door [F]
 --- !u!23 &8217580787511551698
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24826,8 +24897,8 @@ GameObject:
   - component: {fileID: 9069921775619872103}
   - component: {fileID: 9069921775619872104}
   m_Layer: 6
-  m_Name: keycard
-  m_TagString: PickUp
+  m_Name: Keycard
+  m_TagString: Key
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25428,7 +25499,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 3.64, y: 0.1, z: 1.97}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &9069921775619872103
 MonoBehaviour:
@@ -25442,7 +25513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaf4e558a69aa624080e2b307026c780, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptMessage: Pick up keycard
+  promptMessage: Pick Up [E]
 --- !u!54 &9069921775619872104
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -11,7 +11,7 @@ public class Door : MonoBehaviour
 
     void Update()
     {
-        if (isPlayerInRange && Input.GetKeyDown(KeyCode.E))
+        if (isPlayerInRange && Input.GetKeyDown(KeyCode.F))
         {
             if (isDoorOpen == false)
             {
