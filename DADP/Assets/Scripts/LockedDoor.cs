@@ -29,7 +29,7 @@ public class LockedDoor : MonoBehaviour
     {
         Debug.Log("Door Opened");
     }
-    
+
     private void DestroyKey(FirstPersonControls firstPersonControls)
     {
         // Check if the player is holding a key object
