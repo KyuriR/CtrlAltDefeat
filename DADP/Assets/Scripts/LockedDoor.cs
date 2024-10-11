@@ -7,6 +7,8 @@ public class LockedDoor : MonoBehaviour
 {
     private bool isDoorUnlocked = false;
     private FirstPersonControls firstPersonControls;
+    public Animator animator;
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -27,7 +29,12 @@ public class LockedDoor : MonoBehaviour
 
     void UnlockDoor()
     {
-        Debug.Log("Door Opened");
+        if (!isDoorUnlocked)
+        {
+            Debug.Log("Door Opened");
+            animator.SetTrigger("UnlockDoor"); // Trigger the animation to open the door
+            isDoorUnlocked = true; // Mark the door as unlocked
+        }
     }
 
     private void DestroyKey(FirstPersonControls firstPersonControls)
