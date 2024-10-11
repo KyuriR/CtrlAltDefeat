@@ -3,28 +3,28 @@ using UnityEngine.UI;
 
 public class BrightnessControl : MonoBehaviour
 {
-    public Slider brightnessSlider; // Reference to the Brightness Slider
+    public Slider brightnessSlider;
 
-    // Start is called before the first frame update
     void Start()
     {
-        // Set initial brightness level (default is middle of the slider)
+        // Load brightness setting or set to default 0.5 if not found
         brightnessSlider.value = PlayerPrefs.GetFloat("Brightness", 0.5f);
         AdjustBrightness(brightnessSlider.value);
 
-        // Add listener to the slider to detect changes
+        // Add listener to call AdjustBrightness when the slider value changes
         brightnessSlider.onValueChanged.AddListener(AdjustBrightness);
     }
 
-    // Adjust the brightness when the slider is changed
     public void AdjustBrightness(float value)
     {
-        // Here you can adjust the gamma or brightness of the game.
-        // A common approach is to modify the global lighting or apply a brightness filter.
+        // Debug to confirm the function is being called and the correct value is received
+        Debug.Log("Brightness adjusted to: " + value);
 
-        RenderSettings.ambientLight = Color.white * value; // Adjusts ambient light
+        // Adjust the ambient light based on the slider value
+        RenderSettings.ambientLight = Color.white * value;
 
-        // Save the value using PlayerPrefs so it persists between sessions
+        // Save the brightness value to PlayerPrefs
         PlayerPrefs.SetFloat("Brightness", value);
+        PlayerPrefs.Save(); // Ensure the PlayerPrefs are saved immediately
     }
 }
