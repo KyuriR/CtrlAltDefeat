@@ -14180,7 +14180,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &562512603
 RectTransform:
@@ -35356,7 +35356,7 @@ GameObject:
   - component: {fileID: 1795182299}
   - component: {fileID: 1795182298}
   m_Layer: 5
-  m_Name: Backtomaintxt
+  m_Name: Backtomainbtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35379,7 +35379,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1655.2578, y: 975.9319}
+  m_AnchoredPosition: {x: -1568, y: -663}
   m_SizeDelta: {x: 420.0488, y: 111.1985}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1795182298
@@ -35451,7 +35451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.26226407, b: 0.26226407, a: 0.12941177}
+  m_Color: {r: 1, g: 0.26226407, b: 0.26226407, a: 0.49411765}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
