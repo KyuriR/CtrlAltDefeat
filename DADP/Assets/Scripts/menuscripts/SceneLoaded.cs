@@ -11,7 +11,6 @@ public class SceneLoader : MonoBehaviour
     }
     public void StartGame()
     {
-        // Replace "GameScene" with the exact name of your game scene
         SceneManager.LoadScene("GameScene");
     }
 }
