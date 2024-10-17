@@ -6,7 +6,7 @@ using UnityEngine.Rendering;
 public class Interaction : MonoBehaviour
 {
     public float interactionDistance;
-    public GameObject interactionText;
+    
     public LayerMask interactionLayers;
 
     void Update()
@@ -16,25 +16,12 @@ public class Interaction : MonoBehaviour
         {
             if (hit.collider.gameObject.GetComponent<Letter>())
             {
-                interactionText.SetActive(true);
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     hit.collider.gameObject.GetComponent<Letter>().openCloseLetter();
-
                 }
             }
-            else
-            {
-                interactionText.SetActive(false);
-
-            }
-            
-        }
-        else
-        {
-            interactionText.SetActive(false);
-
         }
     }
 }
