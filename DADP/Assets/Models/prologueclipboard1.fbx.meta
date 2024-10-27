@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e1d8e68b25c71c94ab52f7840db5f73e
+guid: 11766ef31cfcdcc4daa1fc40369ea5be
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,33 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Copper
-    second: {fileID: 2100000, guid: 54b033580e799f84b8143d18758147e9, type: 2}
+      name: Board
+    second: {fileID: 2100000, guid: 83a68192b51ad474d9b35f4d4f6fd575, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Metal
-    second: {fileID: 2100000, guid: 6cfc6336588a8a4409a4ca64e7dcebf3, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Rubber2
-    second: {fileID: 2100000, guid: 1fed3b91d05e7094ea8a439b6fdb5f2a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: WireRubber
-    second: {fileID: 2100000, guid: f3e8fb8396d52c54a9d605610be52f69, type: 2}
+      name: Material
+    second: {fileID: 2100000, guid: ff9e00b5bbf7d764c859173fc737f3dd, type: 2}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: AlbedoConnections
-    second: {fileID: 2800000, guid: 260de544f7880274cbc0de240e2eb246, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: AlbedoWires
-    second: {fileID: 2800000, guid: 2c3941383d8d18e4e9df6d18ebb7dff2, type: 3}
+      name: ClipboardAlbedoMap
+    second: {fileID: 2800000, guid: c41618ef63bde9d4cb1aec7747e02a2e, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
