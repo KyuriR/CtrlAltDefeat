@@ -7,8 +7,14 @@ public class LockedDoor : MonoBehaviour
 {
     private bool isDoorUnlocked = false;
     private FirstPersonControls firstPersonControls;
+    private BreakerScript breakerScript;
     public Animator animator;
-    
+
+    private void Start()
+    {
+        breakerScript = GameObject.FindGameObjectWithTag("Breaker").GetComponent<BreakerScript>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -19,6 +25,7 @@ public class LockedDoor : MonoBehaviour
             {
                 UnlockDoor();
                 DestroyKey(firstPersonControls);
+                breakerScript.TurnOffPower();
             }
             else
             {
@@ -35,6 +42,7 @@ public class LockedDoor : MonoBehaviour
             animator.SetTrigger("UnlockDoor"); // Trigger the animation to open the door
             isDoorUnlocked = true; // Mark the door as unlocked
         }
+        
     }
 
     private void DestroyKey(FirstPersonControls firstPersonControls)

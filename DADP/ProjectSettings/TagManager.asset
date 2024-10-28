@@ -9,6 +9,7 @@ TagManager:
   - PickUp
   - Switch
   - Key
+  - Breaker
   layers:
   - Default
   - TransparentFX
