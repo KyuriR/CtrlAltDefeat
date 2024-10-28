@@ -8348,7 +8348,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &480287521
 RectTransform:
   m_ObjectHideFlags: 0
@@ -35561,7 +35561,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -36366,7 +36366,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2016375684
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37320,13 +37320,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 654653554778419380}
+  - component: {fileID: 654653554778419381}
   m_Layer: 0
   m_Name: prologueclipboard1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &187044868882062719
 GameObject:
   m_ObjectHideFlags: 0
@@ -37863,6 +37864,18 @@ Transform:
   - {fileID: 2965111763639485228}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &654653554778419381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170603918327540238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de4742fcca9ff644ebbeefdbf822e892, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &657192929103144707
 Transform:
   m_ObjectHideFlags: 0
