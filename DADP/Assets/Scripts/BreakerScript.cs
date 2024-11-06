@@ -5,15 +5,22 @@ using UnityEngine;
 
 public class BreakerScript : MonoBehaviour
 {
-
     public GameObject[] Lights;
-    public bool isPowerOn;
-    private bool inRange;
-    
-    // Start is called before the first frame update    
+    public GameObject AppearSwitch;
+    public SwitchPickup PickUpSwitch;
+    public GameObject switchText;
+
+    private bool inRange = false;
+    private bool isPowerOn = false;
+
     void Start()
     {
-       
+        if (AppearSwitch != null)
+        {
+            AppearSwitch.SetActive(false);
+        }
+
+        switchText.gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -21,7 +28,8 @@ public class BreakerScript : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             inRange = true;
-            Debug.Log("in range");
+            UpdatePrompt();
+            Debug.Log("Player in range to place the PickUpSwitch");
         }
     }
 
@@ -30,45 +38,48 @@ public class BreakerScript : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             inRange = false;
+            switchText.gameObject.SetActive(false);
+        }
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P) && inRange && !isPowerOn && PickUpSwitch.IsPickedUp())
+        {
+            AppearSwitch.SetActive(true);
+            isPowerOn = true;
+            TurnOnPower();
+            switchText.gameObject.SetActive(false);
+            Debug.Log("PickUpSwitch placed in box and power turned on");
+        }
+    }
+
+    void UpdatePrompt()
+    {
+        if (inRange && PickUpSwitch.IsPickedUp() && !isPowerOn)
+        {
+            //switchText.text = "Place Switch [P]";
+            switchText.gameObject.SetActive(true);
+        }
+        else
+        {
+            switchText.gameObject.SetActive(false);
+        }
+    }
+
+    public void TurnOnPower()
+    {
+        foreach (GameObject light in Lights)
+        {
+            light.SetActive(true);
         }
     }
 
     public void TurnOffPower()
     {
-        foreach (GameObject lights in Lights)
+        foreach (GameObject light in Lights)
         {
-            lights.SetActive(false);
+            light.SetActive(false);
         }
-
-        //isPowerOn = false;
-    }
-    
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.F) && inRange)
-        {
-            //isPowerOn = true;
-            foreach (GameObject lights in Lights)
-            {
-                lights.SetActive(true);
-            }
-        }
-
-        /*if (isPowerOn)
-        {
-            foreach (GameObject lights in Lights)
-            {
-                lights.SetActive(true);
-            }
-        }
-        
-        if (!isPowerOn)
-        {
-            foreach (GameObject lights in Lights)
-            {
-                lights.SetActive(false);
-            }
-        }*/
     }
 }
