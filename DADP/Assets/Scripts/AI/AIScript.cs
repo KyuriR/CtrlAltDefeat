@@ -6,31 +6,29 @@ using UnityEngine.AI;
 public class AI : MonoBehaviour
 {
     public NavMeshAgent Agent;
-
     public Transform Player;
 
-    public LayerMask whatIsGround; 
+    public LayerMask whatIsGround;
     public LayerMask whatIsPlayer;
 
-    //Patroling
     public Vector3 walkPoint;
     bool walkPointSet;
     public float walkPointRange;
 
-    //Attacking
     bool alreadyAttacked;
-    
 
-    //States
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
+
+    public float chaseSpeed = 3.5f;
+    public float patrolSpeed = 2f;
+    public float stopDistance = 1.5f;
 
     private void Awake()
     {
         Player = GameObject.Find("Player").transform;
         Agent = GetComponent<NavMeshAgent>();
     }
-
 
     void Update()
     {
@@ -41,9 +39,11 @@ public class AI : MonoBehaviour
         if (playerInSightRange && !playerInAttackRange) ChasePlayer();
         if (playerInAttackRange && playerInSightRange) AttackPlayer();
     }
-    
+
     private void Patroling()
     {
+        Agent.speed = patrolSpeed;
+
         if (!walkPointSet) SearchWalkPoint();
 
         if (walkPointSet)
@@ -51,13 +51,12 @@ public class AI : MonoBehaviour
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
-        //Walkpoint reached
         if (distanceToWalkPoint.magnitude < 1f)
             walkPointSet = false;
     }
+
     private void SearchWalkPoint()
     {
-        //Calculate random point in range
         float randomZ = Random.Range(-walkPointRange, walkPointRange);
         float randomX = Random.Range(-walkPointRange, walkPointRange);
 
@@ -69,22 +68,30 @@ public class AI : MonoBehaviour
 
     private void ChasePlayer()
     {
-        Agent.SetDestination(Player.position);
+        Agent.speed = chaseSpeed;
+        Agent.stoppingDistance = stopDistance; 
+
+        if (Vector3.Distance(transform.position, Player.position) > stopDistance)
+        {
+            Agent.SetDestination(Player.position);
+        }
+        else
+        {
+            Agent.ResetPath(); 
+        }
     }
 
     private void AttackPlayer()
     {
-        //Make sure enemy doesn't move
         Agent.SetDestination(transform.position);
 
         transform.LookAt(Player);
 
         if (!alreadyAttacked)
         {
-            //die
 
             alreadyAttacked = true;
-            
+
         }
     }
 }
