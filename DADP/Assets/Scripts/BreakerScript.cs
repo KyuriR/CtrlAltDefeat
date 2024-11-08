@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BreakerScript : MonoBehaviour
@@ -58,7 +60,6 @@ public class BreakerScript : MonoBehaviour
     {
         if (inRange && PickUpSwitch.IsPickedUp() && !isPowerOn)
         {
-            //switchText.text = "Place Switch [P]";
             switchText.gameObject.SetActive(true);
         }
         else
