@@ -17,12 +17,12 @@ public class BreakerScript : MonoBehaviour
 
     void Start()
     {
-        if (AppearSwitch != null)
-        {
-            AppearSwitch.SetActive(false);
-        }
+    //    if (AppearSwitch != null)
+    //    {
+    //        AppearSwitch.SetActive(false);
+    //    }
 
-        switchText.gameObject.SetActive(false);
+        //switchText.gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -40,7 +40,7 @@ public class BreakerScript : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             inRange = false;
-            switchText.gameObject.SetActive(false);
+            switchText.gameObject.SetActive(true);
         }
     }
 

@@ -8,7 +8,7 @@ public class TextReveal : MonoBehaviour
     public float delay = 0.3f; // Delay between each word reveal
 
     private string fullText;
-    private bool isDisplaying = false;
+   private bool isDisplaying = false;
 
     void Start()
     {
