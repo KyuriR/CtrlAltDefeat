@@ -1,29 +1,32 @@
+using System.Collections;
 using UnityEngine;
 
-public class LayeredAudioPlayer : MonoBehaviour
+public class VoiceOverManager : MonoBehaviour
 {
-    public AudioSource backgroundMusicSource;  // Background music AudioSource
-    public AudioSource voiceOverSource;        // Voice-over AudioSource
-    public AudioClip[] voiceClips;             // Array of voice-over clips
-    public float voiceVolume = 1.0f;           // Volume for voice-over clips
+    public AudioSource[] audioSources;  // Array of AudioSources with assigned clips
+    public float delayBetweenClips = 20f; // Delay between each clip in seconds
+
+    private int currentClipIndex = 0;
 
     void Start()
     {
-        // Start playing background music
-        if (backgroundMusicSource != null && backgroundMusicSource.clip != null)
-        {
-            backgroundMusicSource.loop = true; // Ensure looping
-            backgroundMusicSource.Play();
-        }
+        StartCoroutine(PlayVoiceOversWithDelay());
     }
 
-    public void PlayVoiceClip(int clipIndex)
+    IEnumerator PlayVoiceOversWithDelay()
     {
-        if (voiceOverSource != null && clipIndex < voiceClips.Length)
+        while (currentClipIndex < audioSources.Length)
         {
-            voiceOverSource.clip = voiceClips[clipIndex];
-            voiceOverSource.volume = voiceVolume;
-            voiceOverSource.Play();
+            // Play the current audio clip
+            audioSources[currentClipIndex].Play();
+            Debug.Log("Playing clip: " + audioSources[currentClipIndex].clip.name);
+
+            // Wait for the clip duration + delay before playing the next one
+            yield return new WaitForSeconds(audioSources[currentClipIndex].clip.length + delayBetweenClips);
+
+            // Move to the next clip
+            currentClipIndex++;
         }
     }
 }
+
