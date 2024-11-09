@@ -5103,6 +5103,7 @@ GameObject:
   - component: {fileID: 12858602}
   - component: {fileID: 12858601}
   - component: {fileID: 12858600}
+  - component: {fileID: 12858603}
   m_Layer: 10
   m_Name: wrack (3)
   m_TagString: Untagged
@@ -5175,6 +5176,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1782937436}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &12858603
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12858599}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2809253, y: 0.88899374, z: 0.212}
+  m_Center: {x: -0.0000003874302, y: 0.44449687, z: -0.00000023841858}
 --- !u!1 &27514383
 GameObject:
   m_ObjectHideFlags: 0
@@ -10394,6 +10416,7 @@ GameObject:
   - component: {fileID: 63244673}
   - component: {fileID: 63244672}
   - component: {fileID: 63244671}
+  - component: {fileID: 63244674}
   m_Layer: 10
   m_Name: wrack (6)
   m_TagString: Untagged
@@ -10466,6 +10489,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1782937436}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &63244674
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63244670}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2809256, y: 0.88899374, z: 0.21200004}
+  m_Center: {x: -0.00000022351747, y: 0.44449687, z: 0}
 --- !u!1 &64263988
 GameObject:
   m_ObjectHideFlags: 0
@@ -11647,6 +11691,7 @@ GameObject:
   - component: {fileID: 176483884}
   - component: {fileID: 176483883}
   - component: {fileID: 176483882}
+  - component: {fileID: 176483885}
   m_Layer: 10
   m_Name: wrack (5)
   m_TagString: Untagged
@@ -11719,6 +11764,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1782937436}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &176483885
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176483881}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2809253, y: 0.88899374, z: 0.212}
+  m_Center: {x: -0.00000014901161, y: 0.44449687, z: -3.1583402e-15}
 --- !u!1 &182570520
 GameObject:
   m_ObjectHideFlags: 0
@@ -13565,6 +13631,7 @@ GameObject:
   - component: {fileID: 329950473}
   - component: {fileID: 329950472}
   - component: {fileID: 329950471}
+  - component: {fileID: 329950474}
   m_Layer: 10
   m_Name: wrack (2)
   m_TagString: Untagged
@@ -13637,6 +13704,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1782937436}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &329950474
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329950470}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2809253, y: 0.88899374, z: 0.212}
+  m_Center: {x: -0.00000020861626, y: 0.44449687, z: -3.1583402e-15}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -22005,6 +22093,7 @@ GameObject:
   - component: {fileID: 579297992}
   - component: {fileID: 579297991}
   - component: {fileID: 579297990}
+  - component: {fileID: 579297993}
   m_Layer: 10
   m_Name: wrack (1)
   m_TagString: Untagged
@@ -22077,6 +22166,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1782937436}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &579297993
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579297989}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2809254, y: 0.88899374, z: 0.212}
+  m_Center: {x: -0.00000026822093, y: 0.44449687, z: -3.1583402e-15}
 --- !u!1 &582417623
 GameObject:
   m_ObjectHideFlags: 0
@@ -24210,6 +24320,7 @@ GameObject:
   - component: {fileID: 782064268}
   - component: {fileID: 782064267}
   - component: {fileID: 782064266}
+  - component: {fileID: 782064269}
   m_Layer: 10
   m_Name: wrack (4)
   m_TagString: Untagged
@@ -24282,6 +24393,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1782937436}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &782064269
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782064265}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2809256, y: 0.88899374, z: 0.21200004}
+  m_Center: {x: -0.00000026822096, y: 0.44449687, z: 0}
 --- !u!1 &786880233
 GameObject:
   m_ObjectHideFlags: 0
@@ -51578,6 +51710,7 @@ GameObject:
   - component: {fileID: 1526003699}
   - component: {fileID: 1526003698}
   - component: {fileID: 1526003697}
+  - component: {fileID: 1526003700}
   m_Layer: 10
   m_Name: wrack (7)
   m_TagString: Untagged
@@ -51650,6 +51783,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1782937436}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1526003700
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526003696}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2809253, y: 0.88899374, z: 0.212}
+  m_Center: {x: -0.00000032782555, y: 0.44449687, z: -3.1583402e-15}
 --- !u!1 &1526215999
 GameObject:
   m_ObjectHideFlags: 0
@@ -54441,6 +54595,7 @@ GameObject:
   - component: {fileID: 1759074508}
   - component: {fileID: 1759074507}
   - component: {fileID: 1759074506}
+  - component: {fileID: 1759074509}
   m_Layer: 10
   m_Name: wrack (9)
   m_TagString: Untagged
@@ -54513,6 +54668,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1782937436}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &1759074509
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759074505}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2809256, y: 0.88899374, z: 0.21200004}
+  m_Center: {x: -0.00000026449567, y: 0.44449687, z: 0.00000023841858}
 --- !u!1 &1766439614
 GameObject:
   m_ObjectHideFlags: 0
@@ -56095,6 +56271,7 @@ GameObject:
   - component: {fileID: 1901170272}
   - component: {fileID: 1901170271}
   - component: {fileID: 1901170270}
+  - component: {fileID: 1901170273}
   m_Layer: 10
   m_Name: wrack (8)
   m_TagString: Untagged
@@ -56167,6 +56344,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1782937436}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1901170273
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901170269}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2809253, y: 0.88899374, z: 0.212}
+  m_Center: {x: -0.0000003874302, y: 0.44449687, z: -3.1583402e-15}
 --- !u!1 &1923661744
 GameObject:
   m_ObjectHideFlags: 0
@@ -60668,6 +60866,7 @@ GameObject:
   - component: {fileID: 3469287837396508996}
   - component: {fileID: 1711813855749526926}
   - component: {fileID: 3469287837396508997}
+  - component: {fileID: 3469287837396508998}
   m_Layer: 10
   m_Name: wrack
   m_TagString: Untagged
@@ -64580,6 +64779,27 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!65 &3469287837396508998
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149341582427}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2809253, y: 0.88899374, z: 0.212}
+  m_Center: {x: -0.0000002682209, y: 0.44449687, z: -3.1583402e-15}
 --- !u!33 &3469287837952470151
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -68090,7 +68310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  lookSpeed: 2
+  lookSpeed: 1
   gravity: -9.81
   jumpHeight: 1
   playerCamera: {fileID: 330585546}
