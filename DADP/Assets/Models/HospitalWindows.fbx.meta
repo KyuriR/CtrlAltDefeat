@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9e6f63e58ea568b48b0f274ad27144c8
+guid: 1ce9b273043dc244b9ec96b46e7a4a69
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,33 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Copper
-    second: {fileID: 2100000, guid: d3bb4d9613e4fee4cb24baeca8fa8e05, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Metal
-    second: {fileID: 2100000, guid: 71614d7dc0fc53748871ae71123fc045, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Rubber2
-    second: {fileID: 2100000, guid: 1807c14ca8deca94eb4e2b4370ac8ebd, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: WireRubber
-    second: {fileID: 2100000, guid: 96a353adef64e0f4791d537306ea2d74, type: 2}
+      name: Glass
+    second: {fileID: 2100000, guid: 91225e68497456341be6cb3433fa058f, type: 2}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: AlbedoConnections
-    second: {fileID: 2800000, guid: 97bf88142c4df0145abc1e2fc78b03e3, type: 3}
+      name: LowPoly
+    second: {fileID: 2800000, guid: f6e8865873d77d54293c7794fab8fe4c, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: AlbedoWires
-    second: {fileID: 2800000, guid: e1ea8ce4d6381b64eaeac6c9b4a0c25b, type: 3}
+      name: "\u2014Pngtree\u2014tile design_3545186"
+    second: {fileID: 2800000, guid: 5134638fe11449745b7e6b2760604a51, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

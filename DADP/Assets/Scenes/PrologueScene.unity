@@ -892,14 +892,14 @@ RectTransform:
   m_GameObject: {fileID: 1927052816}
   m_LocalRotation: {x: -0.01170261, y: -0.106755584, z: 0.0012135233, w: 0.9942157}
   m_LocalPosition: {x: 0, y: 0, z: 698.00024}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.95758, y: 1.1547457, z: 0.95758}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 463820519}
   m_LocalEulerAnglesHint: {x: -1.319, y: -12.261, z: 0.281}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -425, y: -67}
+  m_AnchoredPosition: {x: -425, y: -184}
   m_SizeDelta: {x: 1539.6743, y: 1064.7999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1927052818
@@ -922,15 +922,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\nYou were once part of Project Zero, an experiment meant to unlock the
-    power of the human mind. But something went wrong. The serum that should have
-    enhanced your abilities shattered your memories, trapping you in a decaying hospital
-    filled with dark secrets.\n\nThe hospital twists around you\u2014a maze of failed
-    experiments and broken minds. Shadows move in the corners of your sight, and
-    distorted whispers follow your every step. As you piece together fragments of
-    your past, you begin to understand: this isn\u2019t just a hospital\u2014it\u2019s
-    a prison for your mind.\n\nAnd the worst part? Project Zero never ended. It\u2019s
-    still happening, and you\u2019re still part of it."
+  m_text: "\nYou were part of Project Patient Zero, the hospital\u2019s dark experiment
+    to break the limits of the human mind. But something went horribly wrong. What
+    was supposed to enhance your potential shattered your memory, left you vulnerable
+    to the very thing they feared\u2014a contagious disease that consumes the mind
+    and body.\n\nYou were left behind, trapped here when the others fled, leaving
+    you vulnerable to the disease that has transformed Patient Zero. There is no
+    one to help you, no one to save you. You need to escape before the infection
+    takes hold."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
