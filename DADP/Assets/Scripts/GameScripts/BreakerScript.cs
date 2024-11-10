@@ -27,7 +27,7 @@ public class BreakerScript : MonoBehaviour
             light.SetActive(true);
             yield return new WaitForSeconds(0.1f); // Small delay to help with timing
         }
-        Debug.Log("All lights turned on.");
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -52,7 +52,7 @@ public class BreakerScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && inRange)
+        if (inRange)
         {
             isPowerOn = true;
             DestroyFuse(firstPersonControls);

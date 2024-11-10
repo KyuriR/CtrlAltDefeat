@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
-public class AI : MonoBehaviour
+public class AIScript : MonoBehaviour
 {
     public NavMeshAgent Agent;
     public Transform Player;
@@ -24,10 +26,21 @@ public class AI : MonoBehaviour
     public float patrolSpeed = 2f;
     public float stopDistance = 1.5f;
 
+    public GameObject PlayerOB;
+    public GameObject Checkpoint;
+    private Vector3 respawnPoint;
+
+    //public bool isDead;
+
     private void Awake()
     {
         Player = GameObject.Find("Player").transform;
         Agent = GetComponent<NavMeshAgent>();
+    }
+
+    private void Start()
+    {
+        respawnPoint = Checkpoint.transform.position;
     }
 
     void Update()
@@ -92,6 +105,15 @@ public class AI : MonoBehaviour
 
             alreadyAttacked = true;
 
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+            Debug.Log("He ded son");
         }
     }
 }

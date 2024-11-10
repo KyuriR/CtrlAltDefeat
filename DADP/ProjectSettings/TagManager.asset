@@ -12,6 +12,8 @@ TagManager:
   - Breaker
   - Keycard
   - Fuse
+  - Checkpoint
+  - AI
   layers:
   - Default
   - TransparentFX
