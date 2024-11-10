@@ -1688,8 +1688,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 512.4, y: -491.608}
-  m_SizeDelta: {x: 1024.8, y: 983.216}
+  m_AnchoredPosition: {x: 502.09973, y: -387.4635}
+  m_SizeDelta: {x: 1004.199, y: 774.927}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &574645642
 MonoBehaviour:
@@ -1712,52 +1712,23 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 5dd49b3eacc540408c98eee0de38e0f1, type: 3}
+    m_Font: {fileID: 12800000, guid: 8a2b9e2a607dd2143b58c44bc32410b4, type: 3}
     m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 40
-    m_Alignment: 1
+    m_MaxSize: 50
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '
-
-    Instructions for Project Zero:
-
-
-    Move through the hospital using
-    the WASD keys or the arrow keys to walk in any direction.
-
-
-    To jump up stairs
-    or over obstacles, press the Space bar.
-
-
-    Interact with objects by pressing
-    E.
-
-
-    To open doors, approach them and press F.
-
-
-    Toggle your flashlight
-    with Left Click
-
-
-    When reading a note, press E again to put it down.
-
-
-    You
-    will need to explore the lower level thoroughly. The security door is locked
-    and cannot be opened at this stage.
-
-
-    Investigate the first floor, including
-    areas behind the desk. Keep an eye out for important clues and items.'
+  m_Text: "Instructions :\n\nMove:\nUse WASD or the Arrow Keys to walk in any direction
+    and navigate through the hospital.\n\nPrompts: \nAs you move, watch for prompts
+    that will guide you and reveal clues about your surroundings. Be sure to read
+    the carefully as they only appear once.\n\nFlashlight: Toggle your flashlight
+    with Left Click to illuminate dark areas as you explore."
 --- !u!222 &574645643
 CanvasRenderer:
   m_ObjectHideFlags: 0
