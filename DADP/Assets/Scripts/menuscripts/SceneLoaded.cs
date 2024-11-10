@@ -11,7 +11,7 @@ public class SceneLoader : MonoBehaviour
     }
     public void StartGame()
     {
-        SceneManager.LoadScene("PrologueScene");
+        SceneManager.LoadScene("Warning");
     }
 }
 
