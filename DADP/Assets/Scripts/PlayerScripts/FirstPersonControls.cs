@@ -38,6 +38,8 @@ public class FirstPersonControls : MonoBehaviour
     public GameObject heldObject; // Reference to the currently held object
     public float pickUpRange = 3f; // Range within which objects can be picked up
     private bool holdingGun = false;
+    public bool holdingKeycard = false;
+    public bool holdingFuse = false;
     public bool holdingKey = false;
 
     //crouch settings 
@@ -262,7 +264,7 @@ public class FirstPersonControls : MonoBehaviour
                 holdingGun = true;
             }
 
-            if (hit.collider.CompareTag("Key"))
+            if (hit.collider.CompareTag("Keycard"))
             {
                 // Pick up the object
                 heldObject = hit.collider.gameObject;
@@ -273,7 +275,21 @@ public class FirstPersonControls : MonoBehaviour
                 heldObject.transform.rotation = holdPosition.rotation;
                 heldObject.transform.parent = holdPosition;
 
-                holdingKey = true;
+                holdingKeycard = true;
+            }
+            
+            if (hit.collider.CompareTag("Fuse"))
+            {
+                // Pick up the object
+                heldObject = hit.collider.gameObject;
+                heldObject.GetComponent<Rigidbody>().isKinematic = true; // Disable physics
+
+                // Attach the object to the hold position
+                heldObject.transform.position = holdPosition.position;
+                heldObject.transform.rotation = holdPosition.rotation;
+                heldObject.transform.parent = holdPosition;
+
+                holdingFuse = true;
             }
         }
     }

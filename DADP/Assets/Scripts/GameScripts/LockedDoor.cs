@@ -21,7 +21,7 @@ public class LockedDoor : MonoBehaviour
         {
             firstPersonControls = other.GetComponent<FirstPersonControls>();
 
-            if (firstPersonControls != null && firstPersonControls.holdingKey)
+            if (firstPersonControls != null && firstPersonControls.holdingKeycard)
             {
                 UnlockDoor();
                 DestroyKey(firstPersonControls);
@@ -48,10 +48,10 @@ public class LockedDoor : MonoBehaviour
     private void DestroyKey(FirstPersonControls firstPersonControls)
     {
         // Check if the player is holding a key object
-        if (firstPersonControls.heldObject != null && firstPersonControls.heldObject.CompareTag("Key"))
+        if (firstPersonControls.heldObject != null && firstPersonControls.heldObject.CompareTag("Keycard"))
         {
             Destroy(this.firstPersonControls.heldObject); // Destroy the key GameObject
-            firstPersonControls.holdingKey = false; // Remove the key from the player's inventory
+            firstPersonControls.holdingKeycard = false; // Remove the key from the player's inventory
             Debug.Log("Key has been destroyed.");
         }
     }
