@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PatientRoom : MonoBehaviour
+public class Securityroomprompt : MonoBehaviour
 {
     public GameObject uiText;
+    public GameObject basementText;
     private bool hasTriggered = false;
 
     void Start()
@@ -12,6 +13,7 @@ public class PatientRoom : MonoBehaviour
         if (uiText != null)
         {
             uiText.SetActive(false);
+            basementText.SetActive(true);
 
         }
     }
@@ -35,7 +37,11 @@ public class PatientRoom : MonoBehaviour
             if (uiText != null)
             {
                 uiText.SetActive(false);
+               
             }
         }
     }
 }
+
+
+

@@ -11,6 +11,10 @@ public class BreakerScript : MonoBehaviour
     public GameObject breakerSwitch;
     public GameObject tvScreens;
     public GameObject powerOntext;
+    public GameObject basementBlock;
+    public GameObject basementText;
+
+
 
     private bool inRange = false;
     public bool isPowerOn;
@@ -21,7 +25,10 @@ public class BreakerScript : MonoBehaviour
     {
         tvScreens.SetActive(false);
         breakerSwitch.SetActive(false);
-        powerOntext.SetActive(false); 
+        powerOntext.SetActive(false);
+        
+        basementBlock.SetActive(false);
+
         foreach (GameObject light in Lights)
         {
             light.SetActive(true);
@@ -54,53 +61,54 @@ public class BreakerScript : MonoBehaviour
         {
             isPowerOn = true;
             DestroyFuse(firstPersonControls);
-            
+
             breakerSwitch.SetActive(true);
             tvScreens.SetActive(true);
+           
         }
 
         if (isPowerOn)
         {
             StartCoroutine(TurnOnPowerRoutine());
-            
 
-            /*if (powerOntext != null)
+
+            if (powerOntext != null)
             {
                 StartCoroutine(DisplayPowerOnText());
-            }*/
-        }
-        else
-        {
-            TurnOffPower();
-        }
-    }
-
-    IEnumerator TurnOnPowerRoutine()
-    {
-        foreach (GameObject light in Lights)
-        {
-            light.SetActive(true);
-            yield return new WaitForSeconds(0.1f);
-        }
-        
-        
-    }
-
-    IEnumerator DisplayPowerOnText()
-    {
-        if (powerOntext != null)
-        {
-            powerOntext.SetActive(true);
-            yield return new WaitForSeconds(10f); 
-
-            if (powerOntext != null) 
+            }
+            else
             {
-                Destroy(powerOntext); 
+                TurnOffPower();
+            }
+        }
+
+        IEnumerator TurnOnPowerRoutine()
+        {
+            foreach (GameObject light in Lights)
+            {
+                light.SetActive(true);
+                yield return new WaitForSeconds(0.1f);
+            }
+
+
+        }
+
+        IEnumerator DisplayPowerOnText()
+        {
+            if (powerOntext != null)
+            {
+                powerOntext.SetActive(true);
+                yield return new WaitForSeconds(10f);
+
+                if (powerOntext != null)
+                {
+                    Destroy(powerOntext);
+                }
             }
         }
     }
 
-    public void TurnOffPower()
+        public void TurnOffPower()
     {
         foreach (GameObject light in Lights)
         {
