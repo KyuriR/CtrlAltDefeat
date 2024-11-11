@@ -11,12 +11,12 @@ public class SwitchPickup : MonoBehaviour
     void Update()
     {
      
-        if (Input.GetKeyDown(KeyCode.E) && inRange && !isPickedUp)
+        /*if (Input.GetKeyDown(KeyCode.E) && inRange && !isPickedUp)
         {
             isPickedUp = true;
             gameObject.SetActive(false);
             Debug.Log("Switch picked up");
-        }
+        }*/
     }
 
     private void OnTriggerEnter(Collider other)

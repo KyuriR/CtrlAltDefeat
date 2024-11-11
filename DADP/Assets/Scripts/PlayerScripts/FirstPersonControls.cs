@@ -107,7 +107,7 @@ public class FirstPersonControls : MonoBehaviour
         playerInput.Player.PickUp.performed += ctx => PickUpObject(); // Call the PickUpObject method when pick-up input is performed
 
         //
-        playerInput.Player.Crouch.performed += ctx => ToggleCrouch(); //Call the ToggleCrouch method when crouch input is performed 
+        //playerInput.Player.Crouch.performed += ctx => ToggleCrouch(); //Call the ToggleCrouch method when crouch input is performed 
 
         //
         playerInput.Player.Sprint.performed += ctx => Sprint(); //Call the ToggleCrouch method when crouch input is performed 
@@ -299,10 +299,24 @@ public class FirstPersonControls : MonoBehaviour
 
                 holdingFuse = true;
             }
+            
+            if (hit.collider.CompareTag("Key"))
+            {
+                // Pick up the object
+                heldObject = hit.collider.gameObject;
+                heldObject.GetComponent<Rigidbody>().isKinematic = true; // Disable physics
+
+                // Attach the object to the hold position
+                heldObject.transform.position = holdPosition.position;
+                heldObject.transform.rotation = holdPosition.rotation;
+                heldObject.transform.parent = holdPosition;
+
+                holdingKey = true;
+            }
         }
     }
 
-    public void ToggleCrouch()
+    /*public void ToggleCrouch()
     {
         if (isCrouching)
         {
@@ -316,7 +330,7 @@ public class FirstPersonControls : MonoBehaviour
             characterController.height = crouchHeight;
             isCrouching = true;
         }
-    }
+    }*/
 
     public void Sprint()
     {

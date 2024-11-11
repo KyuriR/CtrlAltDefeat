@@ -24,7 +24,7 @@ public class BreakerScript : MonoBehaviour
         powerOntext.SetActive(false); 
         foreach (GameObject light in Lights)
         {
-            light.SetActive(false);
+            light.SetActive(true);
         }
     }
 
@@ -54,18 +54,20 @@ public class BreakerScript : MonoBehaviour
         {
             isPowerOn = true;
             DestroyFuse(firstPersonControls);
+            
+            breakerSwitch.SetActive(true);
+            tvScreens.SetActive(true);
         }
 
         if (isPowerOn)
         {
             StartCoroutine(TurnOnPowerRoutine());
-            breakerSwitch.SetActive(true);
-            tvScreens.SetActive(true);
+            
 
-            if (powerOntext != null)
+            /*if (powerOntext != null)
             {
                 StartCoroutine(DisplayPowerOnText());
-            }
+            }*/
         }
         else
         {
@@ -80,6 +82,8 @@ public class BreakerScript : MonoBehaviour
             light.SetActive(true);
             yield return new WaitForSeconds(0.1f);
         }
+        
+        
     }
 
     IEnumerator DisplayPowerOnText()
