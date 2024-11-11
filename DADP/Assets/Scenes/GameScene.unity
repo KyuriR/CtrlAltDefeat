@@ -29857,6 +29857,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 189768da38b4e9e418af00729ac9bf16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  frontDoor: 0
+  securityDoor: 0
+  key: 0
+  securityKey: 0
+  keyInventory: {fileID: 0}
 --- !u!1 &608634079
 GameObject:
   m_ObjectHideFlags: 0
@@ -102942,7 +102947,6 @@ GameObject:
   - component: {fileID: 5359387591691330678}
   - component: {fileID: 5359387591691330677}
   - component: {fileID: 5359387591691330682}
-  - component: {fileID: 5359387591691330683}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -103047,10 +103051,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.47676283
-  m_Height: 3.7052283
+  m_Radius: 0.5
+  m_Height: 1
   m_Direction: 1
-  m_Center: {x: 0.47403723, y: 1.7360928, z: -0.076023996}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5359387591691330681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103113,18 +103117,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &5359387591691330683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5359387591691330673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00b25c640c50b204b9283c5d901ce174, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!143 &5359387591691330684
 CharacterController:
   m_ObjectHideFlags: 0
@@ -103144,8 +103136,8 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 1
-  m_Radius: 0
+  m_Height: 2
+  m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0
   m_SkinWidth: 0.08

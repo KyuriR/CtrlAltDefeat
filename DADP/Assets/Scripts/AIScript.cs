@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class AIScript : MonoBehaviour
@@ -15,10 +14,8 @@ public class AIScript : MonoBehaviour
     public LayerMask whatIsPlayer;
 
     public Vector3 walkPoint;
-    private bool walkPointSet;
+    bool walkPointSet;
     public float walkPointRange;
-    private float patrolWaitTime;
-    private float patrolTimer;
 
     bool alreadyAttacked;
 
@@ -60,12 +57,7 @@ public class AIScript : MonoBehaviour
     {
         Agent.speed = patrolSpeed;
 
-        if (!walkPointSet || patrolTimer >= patrolWaitTime)
-        {
-            SearchWalkPoint();
-            patrolWaitTime = Random.Range(1f, 4f);
-            patrolTimer = 0f;
-        }
+        if (!walkPointSet) SearchWalkPoint();
 
         if (walkPointSet)
             Agent.SetDestination(walkPoint);
@@ -74,8 +66,6 @@ public class AIScript : MonoBehaviour
 
         if (distanceToWalkPoint.magnitude < 1f)
             walkPointSet = false;
-
-        patrolTimer += Time.deltaTime;
     }
 
     private void SearchWalkPoint()
@@ -115,6 +105,15 @@ public class AIScript : MonoBehaviour
 
             alreadyAttacked = true;
 
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+            Debug.Log("He ded son");
         }
     }
 }
