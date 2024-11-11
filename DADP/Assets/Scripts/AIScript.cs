@@ -112,8 +112,11 @@ public class AIScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Destroy(gameObject);
-            Debug.Log("He ded son");
+            // Move the player to the respawn point
+            other.transform.position = respawnPoint;
+            Debug.Log("Player respawned at checkpoint.");
         }
     }
+
+
 }

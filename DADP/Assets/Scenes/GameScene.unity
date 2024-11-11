@@ -6363,6 +6363,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 33639729}
   m_Mesh: {fileID: 5216243977776925454, guid: 26ed9a775b12a3144b6c7ad094a7e1fc, type: 3}
+--- !u!1 &34021332
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 34021333}
+  m_Layer: 0
+  m_Name: respawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &34021333
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34021332}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.33, y: 0.88, z: -3.72}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 501191530}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &34260856
 GameObject:
   m_ObjectHideFlags: 0
@@ -25212,7 +25243,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 0.90188676, g: 0.6298115, b: 0.32501957, a: 1}
-  m_Intensity: 0.05
+  m_Intensity: 2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -33641,6 +33672,7 @@ Transform:
   - {fileID: 883519702398781838}
   - {fileID: 1238743502}
   - {fileID: 9041524253023170421}
+  - {fileID: 34021333}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &513541775
@@ -37388,6 +37420,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 189768da38b4e9e418af00729ac9bf16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  frontDoor: 0
+  securityDoor: 0
+  key: 0
+  securityKey: 0
+  keyInventory: {fileID: 0}
 --- !u!1 &608634079
 GameObject:
   m_ObjectHideFlags: 0
@@ -67366,7 +67403,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 0.90188676, g: 0.6298115, b: 0.32501957, a: 1}
-  m_Intensity: 0.05
+  m_Intensity: 2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -95075,7 +95112,7 @@ MonoBehaviour:
   patrolSpeed: 2
   stopDistance: 1.5
   PlayerOB: {fileID: 0}
-  Checkpoint: {fileID: 1403248273}
+  Checkpoint: {fileID: 34021332}
 --- !u!1 &1617192106
 GameObject:
   m_ObjectHideFlags: 0
