@@ -1,10 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Device;
+using UnityEngine.UI;
+
 
 public class BreakerScript : MonoBehaviour
 {
     public GameObject[] Lights;
+    public GameObject breakerSwitch;
+    public GameObject tvScreens;
+    public GameObject powerOntext;
 
     private bool inRange = false;
     public bool isPowerOn;
@@ -13,21 +19,13 @@ public class BreakerScript : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(TurnOnPowerRoutine());
+        tvScreens.SetActive(false);
+        breakerSwitch.SetActive(false);
+        powerOntext.SetActive(false); 
         foreach (GameObject light in Lights)
         {
-            light.SetActive(true);
+            light.SetActive(false);
         }
-    }
-    
-    IEnumerator TurnOnPowerRoutine()
-    {
-        foreach (GameObject light in Lights)
-        {
-            light.SetActive(true);
-            yield return new WaitForSeconds(0.1f); // Small delay to help with timing
-        }
-        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -52,38 +50,51 @@ public class BreakerScript : MonoBehaviour
 
     void Update()
     {
-        if (inRange)
+        if (inRange && firstPersonControls != null && firstPersonControls.holdingFuse)
         {
             isPowerOn = true;
             DestroyFuse(firstPersonControls);
-            
         }
 
         if (isPowerOn)
         {
-            /*foreach (GameObject light in Lights)
-            {
-                light.SetActive(true);
-            }*/
             StartCoroutine(TurnOnPowerRoutine());
-        }
+            breakerSwitch.SetActive(true);
+            tvScreens.SetActive(true);
 
-        if (!isPowerOn)
-        {
-            foreach (GameObject light in Lights)
+            if (powerOntext != null)
             {
-                light.SetActive(false);
+                StartCoroutine(DisplayPowerOnText());
             }
         }
+        else
+        {
+            TurnOffPower();
+        }
     }
-    
-    /*public void TurnOnPower()
+
+    IEnumerator TurnOnPowerRoutine()
     {
         foreach (GameObject light in Lights)
         {
             light.SetActive(true);
+            yield return new WaitForSeconds(0.1f);
         }
-    }*/
+    }
+
+    IEnumerator DisplayPowerOnText()
+    {
+        if (powerOntext != null)
+        {
+            powerOntext.SetActive(true);
+            yield return new WaitForSeconds(10f); 
+
+            if (powerOntext != null) 
+            {
+                Destroy(powerOntext); 
+            }
+        }
+    }
 
     public void TurnOffPower()
     {
@@ -91,8 +102,6 @@ public class BreakerScript : MonoBehaviour
         {
             light.SetActive(false);
         }
-        
-        
 
         isPowerOn = false;
     }
@@ -101,10 +110,9 @@ public class BreakerScript : MonoBehaviour
     {
         if (firstPersonControls.heldObject != null && firstPersonControls.heldObject.CompareTag("Fuse"))
         {
-            Destroy(this.firstPersonControls.heldObject);
+            Destroy(firstPersonControls.heldObject);
             firstPersonControls.holdingFuse = false;
             Debug.Log("Fuse destroyed");
         }
     }
 }
-

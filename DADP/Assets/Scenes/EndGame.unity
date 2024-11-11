@@ -1241,7 +1241,7 @@ MonoBehaviour:
   m_text: "You\u2019re one of the few to escape the twisted halls of Patient Zero.
     \nBut remember, not everything can be left behind. The memories... they\u2019ll
     follow you, haunting you in shadows, whispering from the darkness. \nPerhaps
-    you\u2019re safe for now-\n but Patient Zero never truly ends ..."
+    you\u2019re safe for now-\n but Project Patient Zero never truly ends ..."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b3bd6c68239f4e743aaae6ab0ff401a5, type: 2}
   m_sharedMaterial: {fileID: -1966353908474157421, guid: b3bd6c68239f4e743aaae6ab0ff401a5,

@@ -163,6 +163,14 @@ public class FirstPersonControls : MonoBehaviour
 ;
         // Move the character controller based on the movement vector and speed
         characterController.Move(move * CurrentSpeed * Time.deltaTime);
+
+        if (characterController.isGrounded && velocity.y < 0)
+        {
+            velocity.y = -0.5f; 
+        }
+
+        velocity.y += gravity * Time.deltaTime; 
+        characterController.Move(velocity * Time.deltaTime); 
     }
 
     public void LookAround()

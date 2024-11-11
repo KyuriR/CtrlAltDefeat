@@ -6,7 +6,7 @@ public class SwitchPickup : MonoBehaviour
 {
     private bool isPickedUp = false;
     private bool inRange = false;
-    public GameObject electricalBox; 
+    public GameObject frontdoorKey; 
 
     void Update()
     {
