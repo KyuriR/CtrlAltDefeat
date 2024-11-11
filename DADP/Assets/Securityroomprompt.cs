@@ -5,7 +5,7 @@ using UnityEngine;
 public class Securityroomprompt : MonoBehaviour
 {
     public GameObject uiText;
-    public GameObject basementText;
+   // public GameObject basementText;
     private bool hasTriggered = false;
 
     void Start()
@@ -13,7 +13,7 @@ public class Securityroomprompt : MonoBehaviour
         if (uiText != null)
         {
             uiText.SetActive(false);
-            basementText.SetActive(true);
+            //basementText.SetActive(true);
 
         }
     }

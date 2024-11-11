@@ -12,7 +12,7 @@ public class BreakerScript : MonoBehaviour
     public GameObject tvScreens;
     public GameObject powerOntext;
     public GameObject basementBlock;
-    public GameObject basementText;
+   // public GameObject basementText;
 
 
 
