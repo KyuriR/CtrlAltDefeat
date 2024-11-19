@@ -7,6 +7,8 @@ public class Escape : MonoBehaviour
     private FirstPersonControls firstPersonControls;
 
     private bool isUnlocked = false;
+    public GameObject wood;
+    public GameObject lockObject; 
     
     // Start is called before the first frame update
     void Start()
@@ -31,6 +33,8 @@ public class Escape : MonoBehaviour
                 Destroy(gameObject);
                 //DestroyKey(firstPersonControls);
                 Debug.Log("Escaped");
+                wood.SetActive(false);
+                lockObject.SetActive(false);
             }
             else
             {
