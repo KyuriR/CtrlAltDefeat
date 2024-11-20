@@ -28,12 +28,12 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: black-diamond-plate
-    second: {fileID: 2800000, guid: 0a7c44a4dbe264140b5753edd13bfde8, type: 3}
+    second: {fileID: 2800000, guid: 0b0e2dfcae875224fb3fa949cb279d0e, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: white-abstract-ornament-textile
-    second: {fileID: 2800000, guid: ab17218975268a542b4a4466822e5b5e, type: 3}
+    second: {fileID: 2800000, guid: 047244f6821d00c488794651316418b8, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
