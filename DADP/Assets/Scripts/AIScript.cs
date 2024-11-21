@@ -28,9 +28,7 @@ public class AIScript : MonoBehaviour
 
     public GameObject PlayerOB;
     public GameObject Checkpoint;
-    private Vector3 respawnPoint;
-
-    //public bool isDead;
+    public static Vector3 GlobalRespawnPoint; // Shared respawn point for all ghosts
 
     private void Awake()
     {
@@ -40,7 +38,12 @@ public class AIScript : MonoBehaviour
 
     private void Start()
     {
-        respawnPoint = Checkpoint.transform.position;
+        // Set the global respawn point only once (if not already set)
+        if (GlobalRespawnPoint == Vector3.zero && Checkpoint != null)
+        {
+            GlobalRespawnPoint = Checkpoint.transform.position;
+            Debug.Log("Global respawn point set to: " + GlobalRespawnPoint);
+        }
     }
 
     void Update()
@@ -112,11 +115,9 @@ public class AIScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            // Move the player to the respawn point
-            other.transform.position = respawnPoint;
-            Debug.Log("Player respawned at checkpoint.");
+            // Move the player to the shared global respawn point
+            other.transform.position = GlobalRespawnPoint;
+            Debug.Log("Player respawned at global checkpoint by: " + gameObject.name);
         }
     }
-
-
 }
