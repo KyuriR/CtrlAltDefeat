@@ -20,22 +20,22 @@ public class AIScript : MonoBehaviour
     bool alreadyAttacked;
 
     public float sightRange, attackRange;
-    public bool playerInSightRange, playerInAttackRange;
+    public bool playerInSightRange;
 
     public float chaseSpeed = 3.5f;
     public float patrolSpeed = 2f;
-    public float stopDistance = 1.5f;
 
-    public GameObject PlayerOB;
     public GameObject Checkpoint;
     private Vector3 respawnPoint;
 
-    //public bool isDead;
+    public AudioClip attackSound; 
+    private AudioSource audioSource;
 
     private void Awake()
     {
         Player = GameObject.Find("Player").transform;
         Agent = GetComponent<NavMeshAgent>();
+        audioSource = GetComponent<AudioSource>(); 
     }
 
     private void Start()
@@ -43,14 +43,12 @@ public class AIScript : MonoBehaviour
         respawnPoint = Checkpoint.transform.position;
     }
 
-    void Update()
+    private void Update()
     {
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
-        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
-        if (!playerInSightRange && !playerInAttackRange) Patroling();
-        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
-        if (playerInAttackRange && playerInSightRange) AttackPlayer();
+        if (playerInSightRange) ChasePlayer();
+        else Patroling();
     }
 
     private void Patroling()
@@ -75,48 +73,71 @@ public class AIScript : MonoBehaviour
 
         walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
-        if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
+        if (Physics.Raycast(walkPoint + Vector3.up * 2, Vector3.down, 4f, whatIsGround))
             walkPointSet = true;
     }
 
     private void ChasePlayer()
     {
         Agent.speed = chaseSpeed;
-        Agent.stoppingDistance = stopDistance;
 
-        if (Vector3.Distance(transform.position, Player.position) > stopDistance)
+        Agent.SetDestination(Player.position);
+
+        if (Vector3.Distance(transform.position, Player.position) <= attackRange)
         {
-            Agent.SetDestination(Player.position);
-        }
-        else
-        {
-            Agent.ResetPath();
+            AttackPlayer();
         }
     }
 
     private void AttackPlayer()
     {
-        Agent.SetDestination(transform.position);
+        Agent.ResetPath(); 
 
-        transform.LookAt(Player);
+        transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
 
         if (!alreadyAttacked)
         {
+            if (attackSound != null && audioSource != null)
+            {
+                audioSource.PlayOneShot(attackSound);
+            }
+
+            Debug.Log("Enemy attacks the player");
 
             alreadyAttacked = true;
-
+            Invoke(nameof(ResetAttack), 1f); 
         }
+    }
+
+    private void ResetAttack()
+    {
+        alreadyAttacked = false;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            // Move the player to the respawn point
-            other.transform.position = respawnPoint;
+            Rigidbody rb = other.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.velocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+            }
+
+            CharacterController controller = other.GetComponent<CharacterController>();
+            if (controller != null)
+            {
+                controller.enabled = false;
+                other.transform.position = respawnPoint; 
+                controller.enabled = true;
+            }
+            else
+            {
+                other.transform.position = respawnPoint; 
+            }
+
             Debug.Log("Player respawned at checkpoint.");
         }
     }
-
-
 }
