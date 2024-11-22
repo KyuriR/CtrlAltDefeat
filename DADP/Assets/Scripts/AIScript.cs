@@ -86,6 +86,7 @@ public class AIScript : MonoBehaviour
         if (Vector3.Distance(transform.position, Player.position) <= attackRange)
         {
             AttackPlayer();
+            audioSource.PlayOneShot(attackSound);
         }
     }
 
